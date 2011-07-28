@@ -13,6 +13,14 @@ module MailForm
     attribute_method_prefix 'clear_'
     attribute_method_suffix '?'
 
+    def deliver
+      if valid?
+        MailForm::Notifier.contact(self).deliver
+      else
+        false
+      end
+    end
+
     def self.attributes(*names)
       attr_accessor *names
       define_attribute_methods names
