@@ -3,6 +3,7 @@ source "http://rubygems.org"
 gem "rails", "3.0.6"
 gem "capybara", ">= 0.4.0"
 gem "sqlite3"
+gem "escape_utils"
 
 group :test do
   gem 'turn'
